@@ -1,0 +1,8 @@
+# dependencies
+node_modules/
+
+# hidden file
+.DS_Store
+
+# global variable
+.env

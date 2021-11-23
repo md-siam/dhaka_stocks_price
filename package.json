@@ -1,0 +1,19 @@
+{
+  "name": "last_stocks_price",
+  "version": "1.0.0",
+  "description": "It's a scraping script for dhaka stock exchange",
+  "main": "app_dse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.10",
+    "dotenv": "^10.0.0",
+    "nodemailer": "^6.7.1",
+    "parse": "^3.4.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
