@@ -7,7 +7,7 @@ const cheerio = require("cheerio");
 Parse.initialize(process.env.APP_ID, process.env.JS_KEY);
 Parse.serverURL = process.env.SERVER_URL;
 
-//*______________________________________________this function will update time of all the Stocks
+//*____________________________________________this function will update time of all the Stocks
 async function updateTime(scrapeTime) {
   const Stock = Parse.Object.extend("Stock");
   const queryStock = new Parse.Query(Stock);
@@ -27,7 +27,7 @@ async function updateTime(scrapeTime) {
   }
 }
 
-//!_______________________________________this function will update date & time of all the Stocks
+//!_____________________________________this function will update date & time of all the Stocks
 async function updateStockPrice(scrapeTime, scrapStock) {
   const StockPrice = Parse.Object.extend("StockPrice");
   const queryStockPrice = new Parse.Query(StockPrice);
@@ -56,7 +56,7 @@ async function updateStockPrice(scrapeTime, scrapStock) {
   console.log("updateStockPrice: Done!!");
 }
 
-//*________________________________________this function will update date & time of all the Stocks
+//*_____________________________________this function will update date & time of all the Stocks
 async function updateDateTime(scrapeDate, scrapeTime) {
   const Stock = Parse.Object.extend("Stock");
   const queryStock = new Parse.Query(Stock);
@@ -73,7 +73,7 @@ async function updateDateTime(scrapeDate, scrapeTime) {
   }
 }
 
-//?___________________________________________________________returning as object from Stock class
+//?________________________________________________________returning as object from Stock class
 async function queryForStockObjectId(TRADING_CODE) {
   const Stock = Parse.Object.extend("Stock");
   const queryStock = new Parse.Query(Stock);
@@ -91,7 +91,7 @@ async function queryForStockObjectId(TRADING_CODE) {
   }
 }
 
-//!________________________________this function inserts new stocks prices into "StockPrice" class
+//!_____________________________this function inserts new stocks prices into "StockPrice" class
 async function insertStockPrice(scrapeDate, scrapeTime, scrapStock) {
   const length = scrapStock.length;
   await updateDateTime(scrapeDate, scrapeTime);
@@ -123,7 +123,7 @@ async function insertStockPrice(scrapeDate, scrapeTime, scrapStock) {
   console.log("insertStockPrice: Done!!");
 }
 
-//!________________________________this function will decide what to do with the scrapStock prices
+//!_____________________________this function will decide what to do with the scrapStock prices
 async function readDateTime(scrapeDate, scrapeTime, scrapStock) {
   const Stock = Parse.Object.extend("Stock");
   const queryStock = new Parse.Query(Stock);
@@ -151,7 +151,7 @@ async function readDateTime(scrapeDate, scrapeTime, scrapStock) {
   }
 }
 
-//!______________________________________________________________________________the main function
+//!___________________________________________________________________________the main function
 async function main() {
   await request(
     "https://www.dsebd.org/latest_share_price_scroll_l.php",
