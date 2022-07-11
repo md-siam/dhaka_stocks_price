@@ -10,8 +10,9 @@ This app uses 'cheerio' npm package to web scrap the official site of [Dhaka Sto
 
 Copy & paste these following commands:
 
-```
+```shell
 $ git clone https://github.com/md-siam/dhaka_stocks_price.git
+$ cd dhaka_stocks_price
 $ npm install
 $ node app_dse.js
 ```
